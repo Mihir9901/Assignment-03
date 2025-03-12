@@ -2,15 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Hello') {
             steps {
-                echo 'Building'
-            }
-        }
-        stage('Run') {
-            steps {
-                echo 'Running'
-                bat 'node Hello.js'
+               publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: '', reportFiles: 'Default.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
             }
         }
     }
